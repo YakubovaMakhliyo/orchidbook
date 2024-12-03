@@ -27,9 +27,10 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh 'docker-compose run --rm web php vendor/bin/phpunit'  // Run tests inside the 'web' container
+                bat 'wsl docker-compose run --rm web php vendor/bin/phpunit'
             }
         }
+
 
         stage('Deploy to Server') {
             steps {
